@@ -1,14 +1,14 @@
 const mysql = require('mysql')
 const util = require('util')
 
-const get_connection = () => mysql.createConnection({
+const get_connection1 = () => mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'pwd12345',
     database: 'question_management_system'
 });
 
-const get_connection1 = () => mysql.createConnection({
+const get_connection = () => mysql.createConnection({
     host: 'qms.cmi6nmr1ncfr.us-east-1.rds.amazonaws.com',
     user: 'root',
     password: '8sXajzEGGz9RG74',

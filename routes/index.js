@@ -19,6 +19,8 @@ router.post('/signup', function(req, res, next) {
         error_message: data.sqlMessage
       }
       res.send(error);
+    } else {
+      res.send(data);
     }
   });
 });
@@ -27,7 +29,7 @@ router.post('/sign-in', function(req, res, next) {
   console.log(req.body);
   user_queries.login_user(req.body).then((data) => {
     if (data.length !== 0) {
-      res.sendStatus(200);
+      res.send(data[0]);
     } else {
       res.send({error: 'Invalid Credentials'})
     }
